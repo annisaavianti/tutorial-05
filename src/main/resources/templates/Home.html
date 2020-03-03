@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<title>Home</title>
+		<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+		<object th:include="fragments/fragment :: js" th:remove="tag"></object>
+	</head>
+	<body>
+		<nav th:replace="fragments/fragment :: navbar"></nav>		
+		<div class="container-fluid">
+			<h2>Welcome!</h2>
+			<div class="row">
+				<div class="col-mid-6">
+					<div class="card">
+						<div class="card-header">Add Pilot</div>
+						<div class="card-body">
+							<p class="card-text">Feature for adding pilot</p>
+							<a class="btn btn-primary" th:href="@{/pilot/add}">Add</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-mid-6">
+					<div class="card">
+						<div class="card-header">Search Pilot</div>
+						<form th:action="@{/pilot/view}" method="GET">
+							<div class="card-body">
+								<label for="licenseNumber">License Number: </label>
+								<input type="text" name="licenseNumber" class="form-control"/>
+								<p><p>
+								<button type="submit" class="btn btn-primary">Search</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-mid-6">
+					<div class="card">
+						<div class="card-header">View Flight Data</div>
+						<div class="card-body">
+							<p class="card-text">Feature for viewing flight data</p>
+							<a class="btn btn-primary" th:href="@{/flight/view}">View</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
